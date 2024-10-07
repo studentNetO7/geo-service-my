@@ -1,7 +1,12 @@
 package ru.netology.geo;
 
+
+import org.junit.jupiter.params.provider.Arguments;
 import ru.netology.entity.Country;
 import ru.netology.entity.Location;
+
+import java.util.stream.Stream;
+
 
 public class GeoServiceImpl implements GeoService {
 
@@ -18,7 +23,7 @@ public class GeoServiceImpl implements GeoService {
         } else if (MOSCOW_IP.equals(ip)) {
             return new Location("Moscow", Country.RUSSIA, "Lenina", 15);
         } else if (NEW_YORK_IP.equals(ip)) {
-            return new Location("New York", Country.USA, " 10th Avenue", 32);
+            return new Location("New York", Country.USA, "10th Avenue", 32);
         } else if (ip.startsWith("172.")) {
             return new Location("Moscow", Country.RUSSIA, null, 0);
         } else if (ip.startsWith("96.")) {
